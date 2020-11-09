@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 // ⭐️ Example Challenge START ⭐️
 
 /**Example Task : processFirstItem()
@@ -28,11 +29,14 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  // 1 is global and 2 is local
   
   2. Which of the two uses a closure? How can you tell?
+  // 1
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+  //  
 */
 
 // counter1 code
@@ -61,11 +65,11 @@ Use the inning function below to do the following:
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
 */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(){
+  return Math.floor(Math.random() * Math.floor(3));
+    
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 Use the finalScore function below to do the following:
@@ -80,11 +84,38 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inning) {
+  return {
+    Home: inning(),
+    Away: inning(),
+  };
 }
+console.log(finalScore(inning, 9));
+// function finalScore(inning) {
+//   return {
+//     Home: inning(),
+//     Away: inning(),    
+//   };  
+// }
+// console.log(finalScore(inning));
+
+// function totalGameScore(inning, inning){
+//   const totalGame = [];
+//   let homeScore = 0;
+//   let awayScore = 0;
+  
+//   for(let i =0; i < 9; i++){
+//     const currentScore = gameCB(scoreCB)
+//     homeScore = homeScore + currentscore.Home
+//     awayScore = awayScore + currentScore.Away
+//     totalGame.push(`Period ${i + 1}: Away ${currentScore.Away} - Home ${currentScore.Home}`);
+//   }
+  
+//   return totalGame;
+// }
+  
+
+
 
 /* Task 4: 
 // create a function called getInningScore 
